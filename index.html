@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Video Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css"> </head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <header id="header" class="bg-white shadow-md py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-xl font-semibold text-blue-600 flex items-center">
+                <i class="fab fa-youtube text-2xl mr-2"></i>
+                My Video Platform
+            </a>
+            <div class="flex items-center">
+                <input type="text" placeholder="Search..." class="search-input border border-gray-300 rounded-l-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 w-64 md:w-96">
+                <button class="search-button bg-blue-500 hover:bg-blue-600 text-white rounded-r-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="#" class="upload-link ml-4 text-blue-600 hover:text-blue-700 font-semibold">
+                    <i class="fas fa-upload"></i> Upload
+                </a>
+                <div class="account-container ml-6 relative">
+                    <button id="account-button" class="account-button focus:outline-none">
+                        <i class="fas fa-user-circle text-2xl text-gray-700"></i>
+                    </button>
+                    <div id="account-menu" class="account-menu absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 hidden">
+                        <a href="#" class="account-menu-link block px-4 py-2 text-gray-800 hover:bg-gray-100">Profile</a>
+                        <a href="#" class="account-menu-link block px-4 py-2 text-gray-800 hover:bg-gray-100">Settings</a>
+                        <a href="#" class="account-menu-link block px-4 py-2 text-gray-800 hover:bg-gray-100">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex flex-grow">
+        <aside id="sidebar" class="sidebar hidden md:block">
+            <nav>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-fire"></i> Trending
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-play-circle"></i> Subscriptions
+                </a>
+                <h2 class="sidebar-title">Library</h2>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-history"></i> History
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-clock"></i> Watch Later
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-thumbs-up"></i> Liked Videos
+                </a>
+            </nav>
+        </aside>
+
+        <main id="video-grid" class="container mx-auto py-6 flex-grow">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Recommended Videos</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div class="video-card">
+                    <img src="https://placehold.co/600x400/EEE/31343C" alt="Video Thumbnail 1" class="video-thumbnail">
+                    <div class="video-info">
+                        <h3 class="video-title">Amazing природные явления</h3>
+                        <p class="video-views">1M Views | 1 Year Ago</p>
+                        <div class="channel-info">
+                            <div class="channel-avatar">
+                                <img src="https://placehold.co/40x40/CCC/FFF" alt="Channel Avatar 1">
+                            </div>
+                            <p class="video-channel-name">Природные явления</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <img src="https://placehold.co/600x400/EEE/31343C" alt="Video Thumbnail 2" class="video-thumbnail">
+                    <div class="video-info">
+                        <h3 class="video-title">The Best кот Compilation</h3>
+                        <p class="video-views">5M Views | 2 Months Ago</p>
+                        <div class="channel-info">
+                            <div class="channel-avatar">
+                                <img src="https://placehold.co/40x40/CCC/FFF" alt="Channel Avatar 2">
+                            </div>
+                            <p class="video-channel-name">Funny Cats</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <img src="https://placehold.co/600x400/EEE/31343C" alt="Video Thumbnail 3" class="video-thumbnail">
+                    <div class="video-info">
+                        <h3 class="video-title">Learn JavaScript in 1 Hour</h3>
+                        <p class="video-views">200K Views | 6 Months Ago</p>
+                        <div class="channel-info">
+                            <div class="channel-avatar">
+                                <img src="https://placehold.co/40x40/CCC/FFF" alt="Channel Avatar 3">
+                            </div>
+                            <p class="video-channel-name">Programming Tutorials</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <img src="https://placehold.co/600x400/EEE/31343C" alt="Video Thumbnail 4" class="video-thumbnail">
+                    <div class="video-info">
+                        <h3 class="video-title">Top 10 Songs of 2024</h3>
+                        <p class="video-views">10M Views | 1 Month Ago</p>
+                        <div class="channel-info">
+                            <div class="channel-avatar">
+                                <img src="https://placehold.co/40x40/CCC/FFF" alt="Channel Avatar 4">
+                            </div>
+                            <p class="video-channel-name">Music Vibes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <img src="https://placehold.co/600x400/EEE/31343C" alt="Video Thumbnail 5" class="video-thumbnail">
+                    <div class="video-info">
+                        <h3 class="video-title">5 Minute Home Workout</h3>
+                        <p class="video-views">1M Views | 1 Week Ago</p>
+                        <div class="channel-info">
+                            <div class="channel-avatar">
+                                <img src="https://placehold.co/40x40/CCC/FFF" alt="Channel Avatar 5">
+                            </div>
+                            <p class="video-channel-name">Fitness First</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <img src="https://placehold.co/600x400/EEE/31343C" alt="Video Thumbnail 6" class="video-thumbnail">
+                    <div class="video-info">
+                        <h3 class="video-title">How to Bake a Cake</h3>
+                        <p class="video-views">500K Views | 3 Weeks Ago</p>
+                        <div class="channel-info">
+                            <div class="channel-avatar">
+                                <img src="https://placehold.co/40x40/CCC/FFF" alt="Channel Avatar 6">
+                            </div>
+                            <p class="video-channel-name">Baking Fun</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer id="footer" class="bg-gray-800 text-white py-4 mt-8">
+        <div class="container mx-auto text-center text-sm">
+            <p>&copy; 2024 My Video Platform. All rights reserved.</p>
+            <a href="#" class="footer-link text-blue-400 hover:text-blue-300 ml-4">Privacy Policy</a>
+            <a href="#" class="footer-link text-blue-400 hover:text-blue-300 ml-4">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script>
+        const accountButton = document.getElementById('account-button');
+        const accountMenu = document.getElementById('account-menu');
+
+        accountButton.addEventListener('click', () => {
+            accountMenu.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!accountMenu.classList.contains('hidden') && !accountMenu.contains(event.target) && event.target !== accountButton) {
+                accountMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

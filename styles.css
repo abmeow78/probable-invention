@@ -1,0 +1,248 @@
+/* Global Styles */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 1200px; /* Increased max-width for larger screens */
+}
+
+/* Header Styles */
+#header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header .logo {
+    color: #blue-600;
+    font-size: 1.25rem;
+    font-semibold;
+    display: flex;
+    align-items: center;
+}
+
+#header .logo i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+#header .search-input {
+    border: 1px solid #gray-300;
+    border-radius: 0.5rem 0 0 0.5rem;
+    padding: 0.5rem 1rem;
+    focus-outline: none;
+    @apply focus:ring-2 focus:ring-blue-500; /* Tailwind's focus styles */
+    width: 256px; /* Increased width of search input */
+}
+
+#header .search-button {
+    background-color: #blue-500;
+    color: #fff;
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    @apply hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50; /* Tailwind's hover and focus styles */
+}
+
+#header .search-button i {
+    /* Removed redundant style */
+}
+
+#header .upload-link {
+    color: #blue-600;
+    @apply hover:text-blue-700; /* Tailwind's hover styles */
+    font-weight: 500;
+}
+
+#header .account-container {
+    position: relative;
+}
+
+#header .account-button {
+    focus-outline: none;
+}
+
+#header .account-button i {
+    font-size: 1.5rem;
+    color: #777;
+}
+
+#header .account-menu {
+    position: absolute;
+    right: 0;
+    margin-top: 0.5rem;
+    width: 12rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    display: none; /* Hidden by default, shown by JS */
+}
+
+#header .account-menu-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #333;
+    @apply hover:bg-gray-100; /* Tailwind's hover styles */
+}
+
+/* Sidebar Styles */
+#sidebar {
+    width: 250px;
+    background-color: #f8fafc;
+    padding-top: 1rem;
+    border-right: 1px solid #e0e0e0;
+}
+
+#sidebar .sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+    @apply hover:bg-gray-100 hover:text-black; /* Tailwind's hover styles */
+}
+
+#sidebar .sidebar-link i {
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    color: #555;
+}
+
+#sidebar .sidebar-title {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #777;
+    font-weight: bold;
+}
+
+/* Main Content Styles */
+#video-grid {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow it to take up remaining vertical space */
+}
+
+#video-grid h2 {
+    font-size: 1.5rem;
+    font-semibold;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+#video-grid .grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 column on small screens */
+    @media (min-width: 640px) {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens and up */
+    }
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens and up */
+    }
+      @media (min-width: 1280px) {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns on extra-large screens  */
+    }
+    gap: 1.5rem;
+}
+
+.video-card {
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for transform and shadow */
+}
+
+.video-card:hover {
+    transform: translateY(-0.25rem);
+     box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15), 0 3px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.video-info {
+    padding: 1rem;
+}
+
+.video-title {
+    font-size: 1rem;
+    font-semibold;
+    color: #111;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.video-views {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+.channel-info {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.channel-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+    background-color: #ddd;
+    overflow: hidden;
+}
+
+.channel-avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-channel-name {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+/* Footer Styles */
+#footer {
+    background-color: #gray-800;
+    color: #fff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+#footer .container {
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+#footer .footer-link {
+    color: #blue-400;
+    @apply hover:text-blue-300; /* Tailwind's hover styles */
+    margin-left: 1rem;
+}
